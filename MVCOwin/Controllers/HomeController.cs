@@ -29,10 +29,12 @@ namespace MVCOwin.Controllers
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList) {
                 if (ip.AddressFamily == AddressFamily.InterNetwork)  {
+                    Console.WriteLine(ip.ToString());
                     return ip.ToString();
                 }
             }
-            throw new Exception("Local IP not e found");
+            System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+            throw new Exception("Local IP not found");
         }
 
 
