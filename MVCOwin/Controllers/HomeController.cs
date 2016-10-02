@@ -1,5 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Net;
+using System.Net.Sockets;
+using System;
 
 namespace MVCOwin.Controllers
 {
@@ -21,6 +23,17 @@ namespace MVCOwin.Controllers
             return View();
         }
 
+
+
+        public static string GetLocalIP() {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList) {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)  {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP not e found");
+        }
 
 
     }
