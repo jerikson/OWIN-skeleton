@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+        <!--Begin Navbar-->
+        <div class="navbar nav">
+            <!--<h3 class="muted"></h3>-->
+            <div class="navbar">
+                <ul class="nav">
+                    <li class=""><a href="@Url.Action("index","home")">index</a></li>
+                    <li class=""><a href="@Url.Action("data","home")">data</a></li>
+                    <li class=""><a href="@Url.Action("logout","auth")">logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--End Navbar-->
+    <div class="">
+        @RenderBody()
+    </div>
+</body>
+</html>
+<script src="~/Content/Script/bootstrap.js"></script>
+<script src="~/Content/Script/modernizr-2.6.2.js"></script>
+

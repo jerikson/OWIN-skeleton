@@ -1,0 +1,34 @@
+﻿@model MVCOwin.ViewModels.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+            @using (Html.BeginForm())
+            {
+                @Html.EditorForModel()
+                <br />
+
+                <form id="">
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </form>
+
+                <br />
+                <form id="">
+                    <input value="Login" class="btn btn-primary" type="button" onclick="@("window.location.href='" + @Url.Action("login", "auth") + "'");" />
+                </form>
+            }
+
+    </div>
+</body>
+</html>
+

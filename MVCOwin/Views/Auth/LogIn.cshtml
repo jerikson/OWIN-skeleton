@@ -1,0 +1,40 @@
+﻿<!--- 
+    Since Shared _Layout, is disabled with 'Layout = null'
+    manuually load stylesheets for authentication page. 
+-->
+
+@model MVCOwin.ViewModels.LogInModel
+@{
+    ViewBag.Title = "LogIn";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <!-- Displayssum  of errors inline on page, in a message box, etc .-->
+        @Html.ValidationSummary(true)
+        @using (Html.BeginForm()) {
+            @Html.EditorForModel()
+            <br />
+
+                <form id="">
+                    <button value="Login"class="btn btn-primary" type="submit">Login</button>
+                </form>
+                <br />
+                <form id="">
+                    <input value="Register" class="btn btn-primary" type="button" onclick="@("window.location.href='" + @Url.Action("register", "auth") + "'");" />
+                </form>
+
+        }
+
+                   
+    </div>
+</body>
+</html>
+
